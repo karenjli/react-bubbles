@@ -14,7 +14,14 @@ function App() {
         <Route exact path="/" render={props => <Login {...props} />} />
         <Switch>
           <PrivateRoute exact path="/bubble-page" component={BubblePage} />} />
-          <Route path="/login" render={props => <Login {...props} />} />
+          <Route
+            path="/bubble-page/:id"
+            render={props => <BubblePage {...props} colorList={colorList} />}
+          />
+          <Route
+            path="/login"
+            render={props => <Login {...props} colorList={colorList} />}
+          />
         </Switch>
         {/* 
           Build a PrivateRoute component that will 
